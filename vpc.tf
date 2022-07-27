@@ -18,6 +18,7 @@ resource "aws_subnet" "public" {
 resource "aws_subnet" "private" {
   vpc_id     = aws_vpc.lab_vpc.id
   cidr_block = var.cidr_private
+  availability_zone = "eu-west-1a"
 
   tags = {
     Name = "Private"
@@ -27,6 +28,7 @@ resource "aws_subnet" "private" {
 resource "aws_subnet" "data" {
   vpc_id     = aws_vpc.lab_vpc.id
   cidr_block = var.cidr_data
+  availability_zone = "eu-west-1b"
 
   tags = {
     Name = "Data"
